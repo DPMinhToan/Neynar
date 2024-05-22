@@ -1,0 +1,28 @@
+<html>
+
+<body>
+    <div class="neynar_signin" data-client_id="06524200-10d3-46ad-9562-f116c3bdd37a"
+        data-success-callback="onSignInSuccess" data-theme="dark"> <!-- defaults to light, unless specified -->
+    </div>
+    <script>
+        // Define the onSignInSuccess callback function
+        function onSignInSuccess(data) {
+            console.log("Sign-in success with data:", data);
+            // Your code to handle the sign-in data
+        }
+        function onLoad() {
+            document.getElementById("siwn-button").click();
+        }
+        window.addEventListener(
+            "message",
+            function (event) {
+                alert('message received');
+                TimelessMessageChannel.postMessage(event.data);
+            },
+            false
+        );
+    </script>
+    <script src="https://neynarxyz.github.io/siwn/raw/1.2.0/index.js" onload="onLoad()" async></script>
+</body>
+
+</html>
